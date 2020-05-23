@@ -109,6 +109,18 @@ def play(board)
    end
 end
 
+def play(board)
+   until over?(board) 
+      turn(board)
+   end 
+   if won?(board)
+      winner(board) == "X" || winner(board) == "O" 
+      puts "Congratulations #{winner(board)}!" 
+   elsif draw?(board)
+      puts "Cats Game!" 
+   end 
+end
+
 def turn_count(board)
    counter = 0
    board.each do |spaces|
